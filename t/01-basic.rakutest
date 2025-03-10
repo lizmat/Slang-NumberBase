@@ -1,0 +1,9 @@
+use Test;
+use Slang::NumberBase;
+
+plan 2;
+
+is ₈123.45, "173.346315", 'octal';
+is ₃₆123.45, "3F.G77777", 'base 36';
+
+# vim: expandtab shiftwidth=4

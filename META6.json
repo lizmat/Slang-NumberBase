@@ -1,0 +1,29 @@
+{
+  "auth": "zef:lizmat",
+  "authors": [
+    "Elizabeth Mattijsen"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+    "Slangify:ver<0.0.4+>:auth<zef:lizmat>"
+  ],
+  "description": "Provide number base literals",
+  "license": "Artistic-2.0",
+  "name": "Slang::NumberBase",
+  "perl": "6.d",
+  "provides": {
+    "Slang::NumberBase": "lib/Slang/NumberBase.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/Slang-NumberBase.git",
+  "tags": [
+    "NUMBERS",
+    "BASE",
+    "SLANG"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
