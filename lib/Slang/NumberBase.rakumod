@@ -2,6 +2,7 @@ my role Grammar {
     # Patch the <number> rule to add our own numeric type.
     token number:sym<base> {
         $<base>=<[₀₁₂₃₄₅₆₇₈₉]>+ $<value>=[ \d+ [ '.' \d+ ]? ]
+         | $<value>=[ \d+ [ '.' \d+ ]? ] $<base>=<[₀₁₂₃₄₅₆₇₈₉]>+
     }
 }
 

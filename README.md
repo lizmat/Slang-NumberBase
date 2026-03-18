@@ -18,16 +18,16 @@ say ₃₆123.45;  # 3F.G77777
 DESCRIPTION
 ===========
 
-The `Slang::NumberBase` distribution provides a slang that will interprete literal numeric values that start with subscripted digits ("₀₁₂₃₄₅₆₇₈₉") as the number base in which the numeric value should be expressed.
+The `Slang::NumberBase` distribution provides a slang that will interprete literal numeric values that either start or end with subscripted digits ("₀₁₂₃₄₅₆₇₈₉") as the number base in which the numeric value should be expressed.
 
-So in effect "₈123.45" is short for "123.45.base(8)".
+So in effect "₈123.45" or "123.45₈" are short for "123.45.base(8)".
 
 Note that only number bases 2..36 are currently supported, as these are the values that are supported by the [`base`](https://docs.raku.org/routine/base) method.
 
 ACKNOWLEDGEMENTS
 ================
 
-Tom Browder for the idea.
+Tom Browder for the idea, and Will Coleda for wanting the postfix version.
 
 AUTHOR
 ======
@@ -41,7 +41,7 @@ If you like this module, or what I'm doing more generally, committing to a [smal
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2025 Elizabeth Mattijsen
+Copyright 2025, 2026 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
