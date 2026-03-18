@@ -12,24 +12,12 @@ my role Actions {
     method number:sym<base>(Mu $/) {
 
         # ₈123.45
-        if $<prebase> -> $prebase {
+        my $value := do if $<prebase> -> $prebase {
             my $base := $prebase.Str.trans('₀₁₂₃₄₅₆₇₈₉' => '0123456789').Int;
             die "Base must be between 2 and 36 inclusive: $base"
               if $base < 1 || $base > 36;
-            my $value := $<value>.Str.Numeric.base($base);
+            $<value>.Str.Numeric.base($base)
 
-            # Running under the legacy grammar
-            if Raku.legacy {
-                use QAST:from<NQP>;
-                $*W.add_object_if_no_sc($value);
-                make QAST::SVal.new(:$value);
-            }
-
-            # Running under the Raku grammar
-            else {
-                use experimental :rakuast;
-                make RakuAST::Literal.from-value($value);
-            }
         }
 
         # FF₁₆
@@ -37,22 +25,26 @@ my role Actions {
             my $base := $<postbase>.Str.trans('₀₁₂₃₄₅₆₇₈₉' => '0123456789').Int;
             die "Base must be between 2 and 36 inclusive: $base"
               if $base < 1 || $base > 36;
-            my $value := $<value>.Str.parse-base($base);
+            $<value>.Str.parse-base($base);
+        }
 
-            # Running under the legacy grammar
-            if Raku.legacy {
-                use QAST:from<NQP>;
-                $*W.add_object_if_no_sc($value);
-                make $value ~~ Int
-                  ?? QAST::IVal.new(:$value)
-                  !! QAST::WVal.new(:$value);
-            }
+        # Running under the legacy grammar
+        if Raku.legacy {
+            use QAST:from<NQP>;
+            $*W.add_object_if_no_sc($value);
 
-            # Running under the Raku grammar
-            else {
-                use experimental :rakuast;
-                make RakuAST::Literal.from-value($value);
-            }
+            make ($value ~~ Str
+                   ?? QAST::SVal
+                   !! $value ~~ Int
+                     ?? QAST::IVal
+                     !! QAST::WVal
+                 ).new(:$value);
+        }
+
+        # Running under the Raku grammar
+        else {
+            use experimental :rakuast;
+            make RakuAST::Literal.from-value($value);
         }
     }
 }
