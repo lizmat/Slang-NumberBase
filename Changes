@@ -2,6 +2,10 @@ Revision history for Slang::NumberBase
 
 {{$NEXT}}
 
+0.0.3  2026-03-18T18:15:27+01:00
+    - Make postfix subscript *interpret* value, rather than
+      produce a representation
+
 0.0.2  2026-03-18T17:01:47+01:00
     - Also allow postfix subscript numbers
     - Modernize META

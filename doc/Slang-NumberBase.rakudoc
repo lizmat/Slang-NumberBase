@@ -2,29 +2,38 @@
 
 =head1 NAME
 
-Slang::NumberBase - provide number base literals
+Slang::NumberBase - provide number base literal conversions
 
 =head1 SYNOPSIS
 
 =begin code :lang<raku>
 use Slang::NumberBase;
 
-say ₈123.45;   # 173.346315
-say ₃₆123.45;  # 3F.G77777
+dd ₈123.45;   # "173.346315"
+dd ₃₆123.45;  # "3F.G77777"
+
+dd FF₁₆;    # 255
+dd 377.7₈;  # 255.875
 =end code
 
 =head1 DESCRIPTION
 
 The C<Slang::NumberBase> distribution provides a slang that will
-interprete literal numeric values that either start or end with
-subscripted digits ("₀₁₂₃₄₅₆₇₈₉") as the number base in which the
-numeric value should be expressed.
+interpret literal numeric values that either start or end with
+subscripted digits ("₀₁₂₃₄₅₆₇₈₉") (such as ₈123.45 and FF₁₆).
 
-So in effect "₈123.45" or "123.45₈" are short for "123.45.base(8)".
+In the case of prefixed subscripts, the value is taken as the base
+to which a numeric value should be converted to as a string.  So
+in effect "₈123.45" is short for "123.45.base(8)".
+
+In the case of postfixed subscripts, the value is taken as the base
+with which to interprete the string to create a numeric value.  So
+in effect "FF₁₆" is short for "FF".parse-base(16).
 
 Note that only number bases 2..36 are currently supported, as these
 are the values that are supported by the
-L<C<base>|https://docs.raku.org/routine/base> method.
+L<C<base>|https://docs.raku.org/routine/base> and
+L<C<base>|https://docs.raku.org/routine/parse-base> methods.
 
 =head1 ACKNOWLEDGEMENTS
 

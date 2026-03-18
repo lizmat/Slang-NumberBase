@@ -3,10 +3,10 @@ use Slang::NumberBase;
 
 plan 4;
 
-is ₈123.45, "173.346315", 'octal';
-is ₃₆123.45, "3F.G77777", 'base 36';
+is-deeply ₈123.45, "173.346315", 'octal number output';
+is-deeply ₃₆123.45, "3F.G77777", 'base 36 output';
 
-is 123.45₈, "173.346315", 'octal';
-is 123.45₃₆, "3F.G77777", 'base 36';
+is-deeply FF₁₆,   255,     'hex number interpration';
+is-deeply 377.7₈, 255.875, 'octal number interpretation';
 
 # vim: expandtab shiftwidth=4

@@ -4,7 +4,7 @@
   "specVersion": "1.6",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-03-18T16:02:18+00:00",
+    "timestamp": "2026-03-18T17:15:59+00:00",
     "lifecycles": [
       {
         "phase": "pre-build"
@@ -19,7 +19,7 @@
     "component": {
       "type": "library",
       "mime-type": "text/plain",
-      "bom-ref": "pkg:raku/zef:lizmat/Slang::NumberBase@0.0.2",
+      "bom-ref": "pkg:raku/zef:lizmat/Slang::NumberBase@0.0.3",
       "authors": [
         {
           "bom-ref": "ElizabethMattijsen",
@@ -29,8 +29,8 @@
       "publisher": "zef",
       "group": "zef:lizmat",
       "name": "Slang::NumberBase",
-      "version": "0.0.2",
-      "description": "Provide number base literals",
+      "version": "0.0.3",
+      "description": "Provide number base literal conversions",
       "scope": "required",
       "licenses": [
         {
@@ -41,14 +41,14 @@
           }
         }
       ],
-      "purl": "pkg:raku/zef:lizmat/Slang::NumberBase@0.0.2",
+      "purl": "pkg:raku/zef:lizmat/Slang::NumberBase@0.0.3",
       "externalReferences": [
         {
           "url": "https://github.com/lizmat/Slang-NumberBase",
           "type": "distribution"
         },
         {
-          "url": "https://raku.land/zef:lizmat/Slang::NumberBase?v=0.0.2",
+          "url": "https://raku.land/zef:lizmat/Slang::NumberBase?v=0.0.3",
           "type": "documentation"
         },
         {
@@ -60,7 +60,7 @@
           "type": "license"
         },
         {
-          "url": "https://github.com/lizmat/Slang-NumberBase/archive/refs/tags/0.0.2.zip",
+          "url": "https://github.com/lizmat/Slang-NumberBase/archive/refs/tags/0.0.3.zip",
           "type": "source-distribution"
         },
         {
@@ -294,7 +294,7 @@
       "type": "distribution"
     },
     {
-      "url": "https://raku.land/zef:lizmat/Slang::NumberBase?v=0.0.2",
+      "url": "https://raku.land/zef:lizmat/Slang::NumberBase?v=0.0.3",
       "type": "documentation"
     },
     {
@@ -306,7 +306,7 @@
       "type": "license"
     },
     {
-      "url": "https://github.com/lizmat/Slang-NumberBase/archive/refs/tags/0.0.2.zip",
+      "url": "https://github.com/lizmat/Slang-NumberBase/archive/refs/tags/0.0.3.zip",
       "type": "source-distribution"
     },
     {
