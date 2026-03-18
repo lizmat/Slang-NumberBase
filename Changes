@@ -1,7 +1,10 @@
 Revision history for Slang::NumberBase
 
 {{$NEXT}}
+
+0.0.2  2026-03-18T17:01:47+01:00
     - Also allow postfix subscript numbers
+    - Modernize META
     - Update copyright year
 
 0.0.1  2025-03-10T15:12:03+01:00

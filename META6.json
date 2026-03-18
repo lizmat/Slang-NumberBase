@@ -5,19 +5,28 @@
   ],
   "build-depends": [
   ],
-  "depends": [
-    "Slangify:ver<0.0.4+>:auth<zef:lizmat>"
-  ],
+  "depends": {
+    "runtime": {
+      "requires": [
+        "Slangify:ver<0.0.4+>:auth<zef:lizmat>"
+      ]
+    }
+  },
   "description": "Provide number base literals",
   "license": "Artistic-2.0",
   "name": "Slang::NumberBase",
-  "perl": "6.d",
   "provides": {
     "Slang::NumberBase": "lib/Slang/NumberBase.rakumod"
   },
+  "raku": "6.d",
   "resources": [
   ],
   "source-url": "https://github.com/lizmat/Slang-NumberBase.git",
+  "support": {
+    "bugtracker": "https://github.com/lizmat/Slang-NumberBase/issues",
+    "email": "liz@raku.rocks",
+    "source": "https://github.com/lizmat/Slang-NumberBase.git"
+  },
   "tags": [
     "NUMBERS",
     "BASE",
@@ -25,5 +34,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
